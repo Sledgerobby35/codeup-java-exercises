@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class Input {
     private static Scanner scanner = new Scanner(System.in);
 
-//    public Input(Scanner scanner) {
-//        Input.scanner = new Scanner(System.in);
-//    }
+    public Input() {}
 
     public static String getString(){
         return scanner.next();
@@ -22,7 +20,7 @@ public class Input {
         int userInput = scanner.nextInt();
         if(!(min < userInput && userInput < max)){
             System.out.printf("Please input a number between %s and %s", min, max);
-            getInt(min, max);
+            userInput = getInt(min, max);
         }
         return userInput;
     }
@@ -30,11 +28,12 @@ public class Input {
     public static int getInt(){
         return scanner.nextInt();
     }
+
     public static double getDouble(double min, double max){
         double userInput = scanner.nextDouble();
         if(!(min < userInput && userInput < max)){
             System.out.printf("Please input a number between %s and %s", min, max);
-            getDouble(min, max);
+            userInput = getDouble(min, max);
         }
         return userInput;
     }
